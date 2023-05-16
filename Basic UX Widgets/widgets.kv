@@ -1,0 +1,71 @@
+#: import CustomProgressBar Custom_Widgets
+Interface_2:
+    orientation: "vertical"
+    Label:
+        text: str(slider.value)
+        font_size: '32sp'
+    Slider:
+        id: slider
+        on_value:root.sliding(self)
+        min:0
+        max:100
+        step:1
+        value_track: True
+        value_track_color: [0,0,1,1]
+        value_track_width: dp(5)
+        background_horizontal: "slider_background.png"
+        background_width: dp(5)
+    CustomProgressBar:
+        background_image: "gray.png"
+        foreground_image: "red.png"
+        bgBarHeight: dp(25)
+        fgBarHeight: dp(25)
+        showProgress:True
+        fontSize: dp(25)
+        textColor: [0,0,0,0.6]
+        value:slider.value
+<Interface>:
+    AnchorLayout:
+        BoxLayout:
+            orientation:"vertical"
+            size_hint:None,None
+            size:self.minimum_size
+            BoxLayout:
+                size_hint:None,None
+                size:self.minimum_size
+                CheckBox:
+                    size_hint:None,None
+                    size:dp(20),dp(20)
+                    group: "option"
+                    on_active:root.checking(self,label1)
+                Label:
+                    id: label1
+                    text: "Option 1"
+                    size_hint:None,None
+                    size:dp(60),dp(20)
+            BoxLayout:
+                size_hint:None,None
+                size:self.minimum_size
+                CheckBox:
+                    size_hint:None,None
+                    size:dp(20),dp(20)
+                    group: "option"
+                    on_active:root.checking(self,label2)
+                Label:
+                    id: label2
+                    text: "Option 2"
+                    size_hint:None,None
+                    size:dp(60),dp(20)
+            BoxLayout:
+                size_hint:None,None
+                size:self.minimum_size
+                CheckBox:
+                    size_hint:None,None
+                    size:dp(20),dp(20)
+                    group: "option"
+                    on_active: root.checking(self, label3)
+                Label:
+                    id: label3
+                    text: "Option 3"
+                    size_hint:None,None
+                    size:dp(60),dp(20)

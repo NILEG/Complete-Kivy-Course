@@ -1,0 +1,71 @@
+#:import BgBoxLayout Custom_Layouts
+Interface:
+    Screen:
+        name:"Main Screen"
+        FloatLayout:
+            BgBoxLayout:
+                hex_code:"#FFFFFF"
+                alpha:1
+            Button:
+                id: btn
+                size_hint:0.1,None
+                height:dp(30)
+                pos_hint: {"right":1, "top":1}
+                on_press: root.show_menu()
+                text: "Account"
+
+    Screen:
+        name: "Profile"
+        AnchorLayout:
+            BoxLayout:
+                size_hint:0.4,0.4
+                orientation: "vertical"
+                Label:
+                    text: "UserName"
+                Label:
+                    text: "Email Address"
+                Button:
+                    text: "Show Pop-up"
+                    on_press: root.show()
+
+
+<Pup_up>:
+    title:"Heading"
+    title_align: "center"
+    title_size: '32sp'
+    size_hint:0.5,0.3
+    separator_height:dp(5)
+    BoxLayout:
+        orientation:"vertical"
+        BoxLayout:
+            spacing:dp(10)
+            padding:[dp(10),dp(10),dp(10),dp(10)]
+            Button:
+                text: "Dummy Text"
+            Button:
+                text: "Dummy Text"
+        Button:
+            text:"Close Pop Up"
+            on_press:root.dismiss()
+
+<DropdownMenu>:
+    auto_width:False
+    width:dp(150)
+    max_height:dp(100)
+    BoxLayout:
+        size_hint_y:None
+        height: dp(40)
+        Button:
+            text: "1"
+            on_press: root.btn1()
+        Button:
+            text: "4"
+            on_press: root.btn1()
+    Button:
+        size_hint_y:None
+        height: dp(40)
+        text: "2"
+    Button:
+        size_hint_y:None
+        height: dp(40)
+        text: "3"

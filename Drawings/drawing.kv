@@ -1,0 +1,51 @@
+MainInterface:
+    BoxLayout:
+        orientation:"vertical"
+        Button:
+
+        Infographic:
+            bg_thickness:50
+            fg_thickness:40
+            bg_color:[0,1,0,1]
+            fg_color:[1,0,0,1]
+            radius:350
+            percentage:50
+        Button:
+
+<Interface_2>:
+    BoxLayout:
+        size_hint:0.5,0.5
+        pos_hint:{"center_x":0.5,"center_y":0.5}
+        canvas:
+            Color:
+                rgba: 0.5,0.3,0.7,1
+            Rectangle:
+                size: self.size
+                pos:self.pos
+        Label:
+            text: "Hello World"
+        Button:
+            text: "Hi!"
+
+<Interface>:
+    canvas:
+        Rectangle:
+            size:200,100
+            pos: 350,100
+        Color:
+            rgba: 0.5,0,1,1
+        Rectangle:
+            size:200,100
+            pos: 100,100
+        Color:
+            rgba: 0,1,1,1
+        Ellipse:
+            size:100,100
+            pos: 100,200
+            segments:6
+        Line:
+            width:2
+            ellipse:(300,300,100,100,0,360,12)
+        Line:
+            width:2
+            rectangle:(400,400,200,100)

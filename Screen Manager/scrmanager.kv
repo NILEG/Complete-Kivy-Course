@@ -1,0 +1,29 @@
+Interface:
+    Screen:
+        name: "Main Screen"
+        BoxLayout:
+            BoxLayout:
+                Button:
+                    text: "1"
+                Button:
+                    text: "2"
+            BoxLayout:
+                orientation: "vertical"
+                Button:
+                    text: "Next Screen"
+                    on_press: root.switching()
+                Label:
+                    text: "Hello World!"
+    Screen:
+        name: "Profile"
+        AnchorLayout:
+            BoxLayout:
+                size_hint:0.4,0.4
+                orientation: "vertical"
+                Label:
+                    text: "UserName"
+                Label:
+                    text: "Email Address"
+                Button:
+                    text: "Back"
+                    on_press: root.switching_back()

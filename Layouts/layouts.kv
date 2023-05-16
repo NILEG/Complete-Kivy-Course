@@ -1,0 +1,167 @@
+#: import BgBoxLayout Custom_Layouts
+#: import BgAnchorLayout Custom_Layouts
+#: import BgGridLayout Custom_Layouts
+#: import BgStackLayout Custom_Layouts
+Intefcae_6:
+    border: dp(20)
+    page: 4
+    Intercae_5:
+    Interface_4:
+    Interface_3:
+    Interface_2:
+    Interface:
+<Intercae_5>:
+    orientation: "vertical"
+    hex_code:"#1E45F3"
+    alpha: 0.2
+    padding:[dp(20),dp(20),dp(20),dp(20)]
+    spacing: dp(20)
+    ScrollView:
+        size_hint:1,0.9
+        bar_margin: 20
+        bar_width:5
+        BgStackLayout:
+            id: stackLayout
+            size_hint_y:None
+            height:self.minimum_height
+            hex_code:"#1E45F3"
+            alpha: 0.2
+    BgBoxLayout:
+        size_hint:1,0.1
+        Button:
+            text: "Generate Buttons!"
+            on_release: root.generate()
+        Button:
+            text: "Clear"
+            on_release: root.clear()
+
+<Interface_4>:
+    hex_code:"#1E45F3"
+    alpha: 0.2
+    padding: [dp(50),dp(50),dp(50),dp(50)]
+    BgGridLayout:
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        cols: 2
+        col_default_width:dp(150)
+        row_default_height: dp(50)
+        row_force_default: True
+        col_force_default:True
+        size_hint:None,None
+        size:self.minimum_size
+        orientation: "bt-rl"
+        padding: [dp(50),dp(50),dp(50),dp(50)]
+        Button:
+            text: "1"
+        Button:
+            text: "2"
+        Button:
+            text: "3"
+        Button:
+            text: "4"
+        Button:
+            text: "5"
+        Button:
+            text: "6"
+
+
+
+<Interface_3>:
+    hex_code:"#1E45F3"
+    orientation: "vertical"
+    alpha: 0.2
+    padding: [dp(50),dp(50),dp(50),dp(50)]
+    spacing: dp(20)
+    BgGridLayout:
+        id: gridLayout
+        size_hint:1,0.9
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        cols:3
+        spacing: dp(20)
+        Button:
+            text: "1"
+        Button:
+            text: "2"
+        Button:
+            text: "3"
+
+        Button:
+            text: "4"
+        Button:
+            text: "5"
+        Button:
+            text: "6"
+
+        Button:
+            text: "7"
+        Button:
+            text: "8"
+        Button:
+            text: "9"
+    BgBoxLayout:
+        size_hint:1,0.1
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        Button:
+            text: "Shuffle"
+            on_press: root.shuffle()
+
+<Interface_2>:
+    orientation:"vertical"
+    hex_code:"#1E45F3"
+    alpha: 0.2
+    padding:[20,20,20,20]
+    spacing:20
+    BgBoxLayout:
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        size_hint:1,0.1
+        Label:
+            text:"Title"
+    BgBoxLayout:
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        size_hint:1,0.8
+    BgAnchorLayout:
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        size_hint:1,0.1
+        anchor_x:"right"
+        padding:[10,10,10,10]
+        BgBoxLayout:
+            hex_code:"#1E45F3"
+            alpha: 0.2
+            size_hint_x:None
+            width: self.minimum_width
+            Button:
+                text:"1"
+                size_hint_x:None
+                width:dp(100)
+            Button:
+                text: "2"
+                size_hint_x:None
+                width:dp(100)
+
+
+<Interface>:
+    hex_code:"#1E45F3"
+    alpha: 0.2
+    anchor_x:"right"
+    anchor_y:"bottom"
+    padding:[20,20,20,20]
+    BgBoxLayout:
+        hex_code:"#1E45F3"
+        alpha: 0.2
+        size_hint:None,None
+        size:self.minimum_size
+        padding:[10,10,10,10]
+        spacing:10
+        Button:
+            text: "Login"
+            size_hint:None,None
+            size:dp(100),dp(40)
+        Button:
+            text: "Sign Up"
+            size_hint:None,None
+            size:dp(100),dp(40)

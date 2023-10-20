@@ -1,0 +1,123 @@
+Interface:
+
+<Interface>:
+    canvas.before:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    ScreenManager:
+        id: sm
+        Screen:
+            name: "upload_window"
+            Image_btn:
+                id: upload_btn
+                source: "Drag.png"
+                size_hint:None,None
+                size: dp(400),dp(400)
+                center: self.parent.center
+                on_press: root.upload_menu()
+            Image_btn:
+                source: "Forward.png"
+                size_hint:None,None
+                size: 48,48
+                pos_hint:{"right":1}
+                on_press: root.switching()
+        Screen:
+            name: "visualizer_window"
+            BoxLayout:
+                orientation:"vertical"
+                MDTopAppBar:
+                    title: "Data Visualizer"
+                    right_action_items: [["cog", lambda x: root.setting_menu()]]
+                BoxLayout:
+                    size_hint:(1,.85)
+                    BoxLayout:
+                        orientation: "vertical"
+                        size_hint:(.25, 1)
+                        BoxLayout:
+                            size_hint: (1,.5)
+                            orientation: "vertical"
+                            Label:
+                                markup: True
+                                text: "[color=#3f51b5]Files[/color]"
+                                size_hint:(1,.15)
+                                font_size: "24sp"
+                            BoxLayout:
+                                size_hint:(1,.85)
+                                ScrollView:
+                                    GridLayout:
+                                        id: file_placeholder
+                                        size_hint_y:None
+                                        height: self.minimum_height
+                                        cols:1
+                        BoxLayout:
+                            size_hint: (1,.5)
+                            orientation: "vertical"
+                            Label:
+                                markup: True
+                                text: "[color=#3f51b5]Properties[/color]"
+                                size_hint:(1,.15)
+                                font_size: "24sp"
+                            BoxLayout:
+                                size_hint:(1,.85)
+                                ScrollView:
+                                    GridLayout:
+                                        id: property_placeholder
+                                        size_hint_y:None
+                                        height: self.minimum_height
+                                        cols:1
+                    BoxLayout:
+                        size_hint:(.75,1)
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            ScrollView:
+                                StackLayout:
+                                    size_hint_y:None
+                                    height: self.minimum_height
+                                    id: graph_placeholder
+
+                        BoxLayout:
+                            size_hint_y:None
+                            height:50
+                            Button:
+                                size_hint:None,None
+                                size:(100,50)
+                                background_normal: "update.png"
+                                on_press:root.new_update()
+                            Widget:
+
+                            Button:
+                                size_hint:None,None
+                                size:(50,50)
+                                background_normal: "save_btn.png"
+                                on_press:root.saving()
+
+<Setting_Window>:
+    adaptive_height: True
+    orientation: "vertical"
+    OneLineIconListItem:
+        text: "Line Chart"
+        on_press: root.graph_switching(line_check, line_check, "Line Chart")
+        CheckboxLeftWidget:
+            id: line_check
+            group: "check"
+            active: True
+    OneLineIconListItem:
+        text: "Pie Chart"
+        on_press: root.graph_switching(pie_check, line_check, "Pie Chart")
+        CheckboxLeftWidget:
+            id: pie_check
+            group: "check"
+    OneLineIconListItem:
+        text: "Bar Chart"
+        on_press: root.graph_switching(bar_check, line_check, "Bar Chart")
+        CheckboxLeftWidget:
+            id: bar_check
+            group: "check"
+    OneLineIconListItem:
+        text: "Histogram"
+        on_press: root.graph_switching(histo_check, line_check, "Histogram")
+        CheckboxLeftWidget:
+            id: histo_check
+            group: "check"
